@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b0b1a, #020208);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* CENTER CARD */
+.center-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 20px 40px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 80px rgba(255, 78, 205, 0.15);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* GLOWING CIRCLE */
+.glow-circle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #ff4ecd, transparent 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(40px);
+  animation: breathe 4s infinite;
+  z-index: 0;
+}
+
+/* CONTENT ABOVE CIRCLE */
+section {
+  position: relative;
+  z-index: 2;
+}
+
+.glow-text {
+  font-size: 2rem;
+  text-shadow: 0 0 15px #ff4ecd;
+  animation: glow 2s infinite;
+}
+
+.sub {
+  margin: 15px 0 25px;
+  opacity: 0.8;
+}
+
+.scary {
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 12px 28px;
+  border-radius: 25px;
+  border: none;
+  background: #ff4ecd;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff4ecd;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px #ff4ecd;
+}
+
+.hidden {
+  display: none;
+}
+
+/* PROFILE */
+.profile {
+  margin-top: 10px;
+}
+
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 0 20px #ff4ecd;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.card {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  animation: float 4s infinite;
+}
+
+/* SECRET MESSAGE */
+#secretText {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #ff9de8;
+  text-shadow: 0 0 15px #ff4ecd;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ANIMATIONS */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ff4ecd; }
+  50% { text-shadow: 0 0 35px #ff4ecd; }
+  100% { text-shadow: 0 0 10px #ff4ecd; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes breathe {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.2); }
+  100% { transform: translateX(-50%) scale(1); }
+}
